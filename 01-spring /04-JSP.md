@@ -41,4 +41,20 @@ JSP와 서블릿이 모두 공유한다
 - pageContext (x)
 - session
 
+<br/>
+
+### EL(Expression Language)
+
+JSP 스크립트 태그를 제거하기 위해 나온 개념.
+
+- EX : ${parameter.key(name)}
+- 목적 : 저장 객체의 출력은 단순화
+- 특징
+    - page, request, session, application 등의 객체에 접근해 출력을 처리
+    - 해당값이 null이거나 공백이라 해도 에러는 발생하지 않음
+    - EL은 JSP에서는 기본으로 지원하고 JSTL은 따로 호출해야 한다
+- 예시
+    - <%= request.getParameter(”name”)%> → ${param.name}
+    - <%= userDTO user = (UserDTO)request.getAttribute(”user”) %> → ${user}
+
 
