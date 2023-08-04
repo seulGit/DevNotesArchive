@@ -117,3 +117,37 @@ $(function() {
     })
 })
 ```
+
+
+```
+$.ajax({
+	url: "url명" // 요청이 전송될 URL(컨트롤러)
+	type: "POST" // http 요청방식(기본값은 get)
+	async: true // 요청시 동기/비동기 전송방식 설정(T: 비동기 / F: 동기) 기본값은 TRUE
+	cache: true // 캐시 사용 여부
+	timeout: 3000 // 요청 제한 시간 안에 완료되지 않으면 요청취소 or 에러 콜백 호출
+	data: // 요청시에 포함될 데이터
+	processData: // 데이터를 아래의 컨텐츠 타입 프로퍼티에 맞게 변환했는지 확인
+	contentType: "application/json" //응답데이터 형식(명시하지않으면 자동으로 추측)
+	dataType: "json" // 응답의 데이터 형식
+	beforeSend: function(){
+		//요청전 호출되는 함수
+	},
+	success: function(data, status, xhr){
+		//요청에 대해 정상적으로 응답받았을 경우 호출되는 콜백함수 
+		data: 응답 결과 데이터 
+		status: 응답 결과 코드(200)
+		xhr: xmlhttprequest 헤더 데이터 
+	},
+	error: function(xhr, status, error){
+		// 응답을 받지 못했거나 정상적인 응답이지만 데이터 형식이 확인이 안된다면
+		// 호출되는 콜백함수
+		// ex: 데이터 타입을 지정해서 응답받을 형식을 지정했지만
+		// was에서는 엉뚱한 데이터로 응답하면 error가 호출 
+	},
+	complete: function(xhr, status) {
+		// success가 호출되었건, error가 호출되었건 콜백 호출 후
+		// 반드시 호출하는 콜백함수 
+	}
+});
+```
