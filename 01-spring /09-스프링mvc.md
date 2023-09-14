@@ -49,3 +49,14 @@ controller, service 를 굳이 클래스로 나누어서 작업하는 이유
     생각보다 잦은편 -> 궁극적으로 중복코드의 발생으로
     코드의 재사용성이 하락할 수 있음
 2. 유지보수성
+
+
+### 설정
+application-local.properties
+application-prod.properties 
+이런식으로 properties 파일을 따로 두고 
+VM option 에서 설정해줘서 해당 파일을 바라보게 한다.
+
+그리고 메이븐 repo 경로가 잘 되어있는지 확인한다. 
+인텔리제이의 경우 프로젝트 폴더를 여러개 갖고 있을 때..
+종종 다른 프로젝트의 repo에 붙어서 실행될 때가 있어서 디펜던시를 제대로 인식하지 못하는 경우가 발생한다. 
